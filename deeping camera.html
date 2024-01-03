@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam with Person Detection</title>
+    <!-- Include TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        video {
+            max-width: 100%;
+            border: 2px solid #333;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #personInfo {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        #distanceInfo {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        #laptopSize {
+            margin-top: 10px;
+        }
+        #alert {
+            margin-top: 10px;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <label for="laptopSize">Enter your laptop screen size (in inches):</label>
+    <input type="number" id="laptopSize" placeholder="e.g., 15">
+
+    <video id="webcam" autoplay playsinline></video>
+    <button id="openBtn">Open Camera</button>
+    <button id="closeBtn">Close Camera</button>
+    <div id="personInfo"></div>
+    <div id="distanceInfo"></div>
+    <div id="alert"></div>
+    <script src="app.js"></script>
+</body>
+</html>
